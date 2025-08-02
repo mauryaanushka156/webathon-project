@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TCET NCC Club</title>
+  <style>
+    :root {
+      --offwhite: #FFFDF5;
+      --navy: #0A1D37;
+      --gold: #FFD700;
+      --lightgray: #E6E6E6;
+      --text-dark: #1f1f1f;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--offwhite);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--navy);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: var(--gold);
+      font-size: 2.5rem;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .marquee-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-color: var(--lightgray);
+      padding: 20px 0;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: calc(250px * 10);
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-track img {
+      height: 180px;
+      width: 250px;
+      margin: 0 10px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .core-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .core-box {
+      background-color: var(--white);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .core-box strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--navy);
+    }
+
+    .socials a {
+      color: var(--navy);
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
+      color: var(--gold);
+    }
+
+    footer {
+      background-color: var(--navy);
+      color: var(--offwhite);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 28px;
+      background-color: var(--gold);
+      color: var(--navy);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #e0b600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TCET NCC Unit</h1>
+  </header>
+
+  <section>
+    <h2>Vision</h2>
+    <p>To nurture disciplined, patriotic, and responsible citizens by building leadership and unity through the National Cadet Corps program at TCET.</p>
+  </section>
+
+  <section>
+    <h2>Mission</h2>
+    <p>To provide structured training and exposure to cadets that builds physical endurance, leadership, civic awareness, and service to the nation.</p>
+  </section>
+
+  <section>
+    <h2>Activities & Events</h2>
+    <ul>
+      <li>🇮🇳 Independence Day & Republic Day Parades</li>
+      <li>⛺ Annual NCC Camps & Drills</li>
+      <li>🚴 Fitness & Adventure Rallies</li>
+      <li>🩸 Blood Donation & Awareness Drives</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Core Members & Faculty</h2>
+    <div class="core-members">
+      <div class="core-box">
+        Senior Under Officer<br><strong>Karan Singh</strong>
+      </div>
+      <div class="core-box">
+        Cadet Captain<br><strong>Ananya Deshmukh</strong>
+      </div>
+      <div class="core-box">
+        Cadet Sergeant<br><strong>Ravi Malhotra</strong>
+      </div>
+      <div class="core-box">
+        ANO (Faculty)<br><strong>Lt. Prof. S. Tripathi</strong>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gallery: Highlights</h2>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <img src="ncc1.jpg"alt="NCC Event 1" />
+        <img src="ncc2.jpeg" alt="NCC Event 2" />
+        <img src="ncc3.webp" alt="NCC Parade" />
+        <img src="ncc4.webp" alt="NCC Camp" />
+        <img src="ncc5.webp" alt="NCC Rally" />
+        <!-- repeat -->
+        <img src="ncc1.jpg" alt="NCC Event 1" />
+        <img src="ncc2.jpeg" alt="NCC Event 2" />
+        <img src="ncc3.webp" alt="NCC Parade" />
+        <img src="ncc4.webp" alt="NCC Camp" />
+        <img src="ncc5.webp" alt="NCC Rally" />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Get in touch with the NCC Unit of TCET:</p>
+    <div class="socials">
+      <a href="https://instagram.com/tcetncc" target="_blank">📸 Instagram</a>
+      <a href="mailto:ncc@tcet.com">📧 Email</a>
+    </div>
+  </section>
+
+  <div style="text-align: center;">
+    <a href="interdisciplinary.html" class="back-btn">← Back to Interdisciplinary Clubs</a>
+  </div>
+
+  <footer>
+    &copy; 2025 TCET NCC Unit | Made with 🇮🇳 during PixxelHack.
+  </footer>
+
+</body>
+</html>

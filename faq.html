@@ -1,0 +1,227 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <title>FAQs | ClubConnect TCET</title> 
+<style> :root { --navy: #0A1D37; --gold: #FFD700; --white: #FFFFFF; --light-gray: #F8F9FA; --gray-text: #E0E0E0; }
+.home-btn {
+display: inline-block;
+padding: 10px 22px;
+background-color: var(--gold);
+color: var(--navy);
+font-weight: bold;
+text-decoration: none;
+border-radius: 6px;
+font-size: 1rem;
+transition: background-color 0.3s;
+}
+
+.home-btn:hover {
+background-color: #e0b600;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--navy);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--navy);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-left img {
+  height: 42px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.search-bar input {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+/* FAQ Header */
+.faq-header {
+  background-color: var(--navy);
+  color: var(--gold);
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.faq-header h1 {
+  font-size: 2.6rem;
+}
+
+.faq-header p {
+  color: var(--white);
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* FAQ Section */
+.faq-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  flex: 1;
+}
+
+details {
+  background-color: var(--white);
+  border-left: 5px solid var(--gold);
+  border-radius: 6px;
+  margin-bottom: 18px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+summary {
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--navy);
+  outline: none;
+}
+
+details[open] summary {
+  color: var(--gold);
+}
+
+details p {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  background-color: #08182B;
+  color: var(--white);
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.footer-left a,
+.footer-right a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+  color: #e0b600;
+}
+
+.footer-center {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-center {
+    position: static;
+    transform: none;
+    margin-top: 15px;
+  }
+}
+</style> </head> <body> <!-- Navbar --> <nav class="navbar"> <div class="nav-left"> <img src="logo.png" alt="ClubConnect TCET Logo"> <div class="nav-links"> <a href="index.html">Home</a> <a href="index.html#explore">Explore</a> <a href="upcoming-events.html">Events</a> <a href="about.html">About</a> <a href="faq.html">FAQs</a> </div> </div> <div class="search-bar"> <input type="text" placeholder="Search clubs..."> </div> </nav> <!-- FAQ Header --> <div class="faq-header"> <h1>Frequently Asked Questions</h1> <p>Everything you need to know about ClubConnect TCET</p> </div> <!-- FAQ Section --> <div class="faq-section">
+<details>
+  <summary>What is ClubConnect TCET?</summary>
+  <p>
+    ClubConnect TCET is a centralized platform to explore all student-run clubs at Thakur College of Engineering & Technology. It helps you discover events, join clubs, and stay updated on campus activities.
+  </p>
+</details>
+
+<details>
+  <summary>How can I join a club through this website?</summary>
+  <p>
+    While the site doesn't support direct registration, you can explore club pages and use their provided contact or social links to join or inquire about membership.
+  </p>
+</details>
+
+<details>
+  <summary>Can first-year students participate in club events?</summary>
+  <p>
+    Absolutely! Most clubs actively welcome first-year students. Events, workshops, and even organizing teams often include freshers.
+  </p>
+</details>
+
+<details>
+  <summary>How do I know which club is best for me?</summary>
+  <p>
+    Browse the "Explore" section to view clubs by type — technical, cultural, social, etc. Read their descriptions and recent events to find your fit.
+  </p>
+</details>
+
+<details>
+  <summary>Who built ClubConnect TCET?</summary>
+  <p>
+    This website was developed by students as part of PixxelHack 2025 to make club discovery easier and foster participation in TCET's vibrant community.
+  </p>
+</details>
+<!-- Back to Home Button --> <div style="text-align: center; margin-top: 20px; margin-bottom: 40px;"> <a href="home.html" class="home-btn">← Back to Home</a> </div>
+</div> <!-- Footer --> <footer> <div class="footer-left"><a href="faq.html">FAQs</a></div> <div class="footer-right"><a href="#">Contact</a></div> <div class="footer-center">&copy; 2025 ClubConnect TCET. Made with ❤️ during PixxelHack.</div> </footer> </body></html>

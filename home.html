@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClubConnect TCET</title>
+  <style>
+    :root {
+      --navy: #0A1D37;
+      --gold: #FFD700;
+      --white: #FFFFFF;
+      --text-gray: #E0E0E0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--navy);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+    }
+
+    /* STARS */
+    .stars {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .stars span {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #FFD700;
+      border-radius: 50%;
+      animation: blink 2s infinite ease-in-out alternate;
+      opacity: 0.8;
+    }
+
+    @keyframes blink {
+      from { opacity: 0.4; transform: scale(0.9); }
+      to   { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #08182b;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo-img {
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .search-bar input {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: var(--text-gray);
+      margin-bottom: 30px;
+    }
+
+    .hero .explore-btn {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--navy);
+      padding: 12px 28px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .hero .explore-btn:hover {
+      background-color: #e0b600;
+    }
+
+    /* SEARCH RESULTS */
+    .search-results {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .search-results .result {
+      background-color: var(--gold);
+      color: var(--navy);
+      font-weight: bold;
+      padding: 10px 20px;
+      margin: 8px auto;
+      border-radius: 6px;
+      cursor: pointer;
+      max-width: 300px;
+      transition: transform 0.2s ease;
+    }
+
+    .search-results .result:hover {
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #08182b;
+      color: var(--white);
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-left, .footer-right {
+      font-size: 1rem;
+    }
+
+    .footer-left a, .footer-right a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-left a:hover, .footer-right a:hover {
+      color: #e0b600;
+    }
+
+    .footer-center {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-left, .footer-right {
+        margin: 10px 0;
+      }
+
+      .footer-center {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+      }
+    }
+
+    /* PAGE TRANSITION OVERLAY */
+    #transition-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: var(--navy);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    #transition-overlay.active {
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    #transition-overlay img {
+      width: 150px;
+      height: 150px;
+      animation: spinShrink 1.2s ease forwards;
+    }
+
+    @keyframes spinShrink {
+      0% {
+        transform: rotate(0deg) scale(4);
+        opacity: 0.9;
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Star particles -->
+  <div class="stars" id="stars"></div>
+
+  <div class="content">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <div class="logo">
+          <img src="logo.png" alt="ClubConnect TCET Logo" class="logo-img">
+        </div>
+        <div class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="explore.html">Explore</a>
+          <a href="upcoming-events.html">Events</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search clubs..." />
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>WELCOME TO CLUBCONNECT TCET</h1>
+      <p>Your gateway to every club at TCET.</p>
+      <a href="explore.html" class="explore-btn">Explore Now</a>
+      <div id="search-results" class="search-results"></div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left"><a href="faq.html">FAQs</a></div>
+    <div class="footer-right"><a href="contact.html">Contact</a></div>
+    <div class="footer-center">&copy; 2025 ClubConnect TCET. Made with ❤️ during PixxelHack.</div>
+  </footer>
+
+  <!-- PAGE TRANSITION OVERLAY -->
+  <div id="transition-overlay"></div>
+
+  <!-- SCRIPT -->
+  <script>
+    const overlay = document.getElementById('transition-overlay');
+
+    document.querySelectorAll('a').forEach(link => {
+      if (link.href && !link.href.startsWith('#') && !link.hasAttribute('target')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const destination = this.href;
+          overlay.innerHTML = '<img src="logo.png" alt="Logo">';
+          overlay.classList.add('active');
+          setTimeout(() => {
+            window.location.href = destination;
+          }, 1600);
+        });
+      }
+    });
+
+    // Stars
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 30; i++) {
+      const star = document.createElement('span');
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 3}s`;
+      star.style.width = star.style.height = `${Math.random() * 2 + 1}px`;
+      starsContainer.appendChild(star);
+    }
+
+    // Search logic (frontend only)
+    const clubs = ["ACM", "S4DS", "CSI", "OSWAP", "NCC", "ISTE", "MESA", "Rotaract", "Shastra","Mavricks", "TSWD"];
+    const input = document.querySelector('.search-bar input');
+    const resultsContainer = document.getElementById('search-results');
+
+    input.addEventListener('input', () => {
+      const query = input.value.toLowerCase();
+      resultsContainer.innerHTML = '';
+
+      if (query.length === 0) return;
+
+      const filtered = clubs.filter(club => club.toLowerCase().includes(query));
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = '<div class="result">No clubs found</div>';
+      } else {
+        filtered.forEach(club => {
+          const div = document.createElement('div');
+          div.className = 'result';
+          div.textContent = club;
+          div.onclick = () => alert(`Redirect to ${club}.html`);
+          resultsContainer.appendChild(div);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TCET ISTE Student Chapter</title>
+  <style>
+    :root {
+      --offwhite: #FFFDF5;
+      --navy: #0A1D37;
+      --gold: #FFD700;
+      --lightgray: #E6E6E6;
+      --text-dark: #1f1f1f;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--offwhite);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--navy);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: var(--gold);
+      font-size: 2.5rem;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .marquee-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-color: var(--lightgray);
+      padding: 20px 0;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: calc(250px * 10);
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-track img {
+      height: 180px;
+      width: 250px;
+      margin: 0 10px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .core-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .core-box {
+      background-color: var(--white);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .core-box strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--navy);
+    }
+
+    .socials a {
+      color: var(--navy);
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
+      color: var(--gold);
+    }
+
+    footer {
+      background-color: var(--navy);
+      color: var(--offwhite);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 28px;
+      background-color: var(--gold);
+      color: var(--navy);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #e0b600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TCET ISTE Student Chapter</h1>
+  </header>
+
+  <section>
+    <h2>Vision</h2>
+    <p>To enhance the quality of technical education and student potential by fostering innovation, creativity, and professional excellence through ISTE initiatives.</p>
+  </section>
+
+  <section>
+    <h2>Mission</h2>
+    <p>To empower students with emerging technologies and professional skills through technical events, student development programs, and industry exposure under ISTE.</p>
+  </section>
+
+  <section>
+    <h2>Activities & Events</h2>
+    <ul>
+      <li>💡 Ideathon & Technical Paper Presentations</li>
+      <li>🧠 Technical Quiz & Hackathons</li>
+      <li>📈 Soft Skills & Resume Building Sessions</li>
+      <li>👨‍🏫 Guest Lectures from Industry Professionals</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Core Members & Faculty</h2>
+    <div class="core-members">
+      <div class="core-box">
+        President<br><strong>Rajvi Mehta</strong>
+      </div>
+      <div class="core-box">
+        Vice President<br><strong>Kartik Korde</strong>
+      </div>
+      <div class="core-box">
+        Technical Head<br><strong>Ankit Shah</strong>
+      </div>
+      <div class="core-box">
+        Faculty Advisor<br><strong>Prof. R. Iyer</strong>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gallery: Highlights</h2>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <img src="iste1.jpeg" alt="ISTE 1" />
+        <img src="iste2.jpg" alt="ISTE 2" />
+        <img src="iste3.webp" alt="ISTE 3" />
+        <img src="iste4.webp" alt="ISTE 4" />
+        <img src="iste5.webp" alt="ISTE 5" />
+        <!-- repeat -->
+        <img src="iste1.jpeg" alt="ISTE 1" />
+        <img src="iste2.jpg" alt="ISTE 2" />
+        <img src="iste3.webp" alt="ISTE 3" />
+        <img src="iste4.webp" alt="ISTE 4" />
+        <img src="iste5.webp" alt="ISTE 5" />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Stay connected with the TCET ISTE Chapter:</p>
+    <div class="socials">
+      <a href="https://instagram.com/tcetiste" target="_blank">📸 Instagram</a>
+      <a href="mailto:iste@tcet.com">📧 Email</a>
+    </div>
+  </section>
+
+  <div style="text-align: center;">
+    <a href="interdisciplinary.html" class="back-btn">← Back to Interdisciplinary Clubs</a>
+  </div>
+
+  <footer>
+    &copy; 2025 TCET ISTE Student Chapter | Made with 💡 during PixxelHack.
+  </footer>
+
+</body>
+</html>

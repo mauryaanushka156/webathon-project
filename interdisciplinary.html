@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interdisciplinary Clubs | ClubConnect TCET</title>
+  <style>
+    :root {
+      --navy: #0A1D37;
+      --gold: #FFD700;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--navy);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: var(--gold);
+      margin-bottom: 40px;
+    }
+
+    .club-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .club-btn {
+      background-color: var(--gold);
+      color: var(--navy);
+      font-weight: bold;
+      padding: 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.3s;
+      width: 100%;
+      font-size: 1.2rem;
+    }
+
+    .club-btn:hover {
+      background-color: #e0b600;
+      transform: scale(1.03);
+    }
+
+    .back-btn {
+      margin-top: 50px;
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--navy);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #e0b600;
+    }
+
+    /* PAGE TRANSITION OVERLAY */
+    #transition-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: var(--navy);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    #transition-overlay.active {
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    #transition-overlay img {
+      width: 150px;
+      height: 150px;
+      animation: spinShrink 1.6s ease forwards;
+    }
+
+    @keyframes spinShrink {
+      0% {
+        transform: rotate(0deg) scale(4);
+        opacity: 0.9;
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Interdisciplinary Clubs</h1>
+
+  <div class="club-list">
+    <a href="tsdw.html" class="club-btn">TSDW</a>
+    <a href="rot.html" class="club-btn">ROTARACT</a>
+    <a href="iste.html" class="club-btn">ISTE</a>
+    <a href="ncc.html" class="club-btn">NCC</a>
+    <a href="shastra.html" class="club-btn">SHASTRA coding club</a>
+    <a href="mav.html" class="club-btn">MAVERICKS RACING</a>
+  </div>
+
+  <a href="home.html" class="back-btn">← Back to Home</a>
+
+  <!-- PAGE TRANSITION OVERLAY -->
+  <div id="transition-overlay"></div>
+
+  <!-- SCRIPT -->
+  <script>
+    const overlay = document.getElementById('transition-overlay');
+
+    document.querySelectorAll('a').forEach(link => {
+      if (link.href && !link.href.startsWith('#') && !link.hasAttribute('target')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const destination = this.href;
+
+          overlay.innerHTML = '<img src="logo.png" alt="Logo">';
+          overlay.classList.add('active');
+
+          setTimeout(() => {
+            window.location.href = destination;
+          }, 1600);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

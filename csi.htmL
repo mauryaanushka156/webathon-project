@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TCET CSI Club</title>
+  <style>
+    :root {
+      --offwhite: #FFFDF5;
+      --navy: #0A1D37;
+      --gold: #FFD700;
+      --lightgray: #E6E6E6;
+      --text-dark: #1f1f1f;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--offwhite);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--navy);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: var(--gold);
+      font-size: 2.5rem;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .marquee-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background-color: var(--lightgray);
+      padding: 20px 0;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: calc(250px * 10);
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-track img {
+      height: 180px;
+      width: 250px;
+      margin: 0 10px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .core-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .core-box {
+      background-color: var(--white);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .core-box strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--navy);
+    }
+
+    .socials a {
+      color: var(--navy);
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
+      color: var(--gold);
+    }
+
+    footer {
+      background-color: var(--navy);
+      color: var(--offwhite);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 28px;
+      background-color: var(--gold);
+      color: var(--navy);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #e0b600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TCET CSI Student Chapter</h1>
+  </header>
+
+  <section>
+    <h2>Vision</h2>
+    <p>To inspire innovation and excellence in computing by building a connected, empowered and informed student community under CSI.</p>
+  </section>
+
+  <section>
+    <h2>Mission</h2>
+    <p>
+To facilitate research, knowledge sharing, learning, and career enhancement for IT students at TCET
+
+To inspire, nurture, and assist new talent and innovations through workshops, seminars, student publications, coding contests, symposiums, industrial visits, and e‑magazines like Nimbus
+
+To provide continuous exposure to industry leaders and academic mentors—helping members build professional competence and networks</p>
+  </section>
+
+  <section>
+    <h2>Activities & Events</h2>
+    <ul>
+      <li>💡 TechTonic Coding Contests</li>
+      <li>🎤 CSI Guest Lecture Series</li>
+      <li>🛠️ Project Building Sprints</li>
+      <li>🎮 Game Development Weekend</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Core Members & Faculty</h2>
+    <div class="core-members">
+      <div class="core-box">
+        President<br><strong>Aarav Singh</strong>
+      </div>
+      <div class="core-box">
+        Vice President<br><strong>Diya Shah</strong>
+      </div>
+      <div class="core-box">
+        Event Lead<br><strong>Yash Sharma</strong>
+      </div>
+      <div class="core-box">
+        Faculty Coordinator<br><strong>Prof. P. Mehta</strong>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gallery: Highlights</h2>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <img src="csi1.jpg" alt="CSI 1" />
+        <img src="csi2.jpg" alt="CSI 2" />
+        <img src="csi3.jpg" alt="CSI 3" />
+        <img src="csi4.jpg" alt="CSI 4" />
+        <img src="csi5.jpeg" alt="CSI 5" />
+        <!-- repeat for loop effect -->
+        <img src="csi1.jpg" alt="CSI 1" />
+        <img src="csi2.jpg" alt="CSI 2" />
+        <img src="csi3.jpg" alt="CSI 3" />
+        <img src="csi4.jpg" alt="CSI 4" />
+        <img src="csi5.jpeg" alt="CSI 5" />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Connect with the TCET CSI Chapter:</p>
+    <div class="socials">
+      <a href="https://instagram.com/tcetcsi" target="_blank">📸 Instagram</a>
+      <a href="https://csi.tcetmumbai.in/ " target="_blank">🌐 Website</a>
+      <a href="mailto:csi@tcet.com">📧 Email</a>
+    </div>
+  </section>
+
+  <div style="text-align: center;">
+    <a href="branchwise.html" class="back-btn">← Back to Branchwise Clubs</a>
+  </div>
+
+  <footer>
+    &copy; 2025 TCET CSI Student Chapter | Made with ❤️ during PixxelHack.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upcoming Events | ClubConnect TCET</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --navy: #0A1D37;
+      --gold: #FFD700;
+      --offwhite: #FFFDF5;
+      --light-gray: #F8F9FA;
+      --text-dark: #2B2B2B;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light-gray);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-left img {
+      height: 42px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .search-bar input {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: none;
+      font-size: 0.9rem;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--navy);
+      color: var(--gold);
+      padding: 40px 20px 25px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: var(--white);
+      font-size: 1.1rem;
+    }
+
+    /* Events Section */
+    .event-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    .event-card {
+      background-color: var(--white);
+      border-left: 5px solid var(--gold);
+      border-radius: 6px;
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .event-date {
+      font-weight: bold;
+      color: var(--navy);
+      font-size: 1.15rem;
+    }
+
+    .event-time {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .event-title {
+      margin: 10px 0 5px;
+      font-size: 1.3rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .event-club {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .event-description {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+
+    .countdown {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #CC0000;
+    }
+
+    /* Back Button */
+    .back-btn {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .back-btn a {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn a:hover {
+      background-color: #e0b600;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #08182B;
+      color: var(--white);
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .footer-left a,
+    .footer-right a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .footer-left a:hover,
+    .footer-right a:hover {
+      color: #e0b600;
+    }
+
+    .footer-center {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-center {
+        position: static;
+        transform: none;
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="logo.png" alt="ClubConnect TCET Logo">
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="home.html#explore">Explore</a>
+        <a href="upcoming-events.html">Events</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search clubs...">
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Upcoming Events</h1>
+    <p>Stay updated with all club activities at TCET</p>
+  </header>
+
+  <!-- Event Section -->
+  <div class="event-section">
+
+    <div class="event-card">
+      <div class="event-date">August 4, 2025</div>
+      <div class="event-time">10:00 AM – 12:00 PM</div>
+      <div class="event-title">Hackathon Kickoff</div>
+      <div class="event-club">By TCET ACM</div>
+      <div class="event-description">
+        Official launch of PixxelHack 2025. Meet your mentors and receive problem statements.
+      </div>
+      <div class="countdown" data-date="2025-08-04T10:00:00">Loading countdown...</div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-date">August 6, 2025</div>
+      <div class="event-time">2:00 PM – 4:00 PM</div>
+      <div class="event-title">Robotics Demo Day</div>
+      <div class="event-club">By Shastra Club</div>
+      <div class="event-description">
+        See live demos of student-built robots. Q&A, networking, and tech showcases.
+      </div>
+      <div class="countdown" data-date="2025-08-06T14:00:00">Loading countdown...</div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-date">August 8, 2025</div>
+      <div class="event-time">11:00 AM – 1:00 PM</div>
+      <div class="event-title">AI in Daily Life</div>
+      <div class="event-club">By TCET-CSI</div>
+      <div class="event-description">
+        Hands-on workshop exploring real-world AI projects and student innovations.
+      </div>
+      <div class="countdown" data-date="2025-08-08T11:00:00">Loading countdown...</div>
+    </div>
+
+  </div>
+
+  <!-- Back to Home Button -->
+  <div class="back-btn">
+    <a href="home.html">← Back to Home</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left"><a href="faq.html">FAQs</a></div>
+    <div class="footer-right"><a href="contact.html">Contact</a></div>
+    <div class="footer-center">&copy; 2025 ClubConnect TCET. Made with ❤️ during PixxelHack.</div>
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    function updateCountdowns() {
+      const now = new Date();
+      document.querySelectorAll('.countdown').forEach(el => {
+        const eventTime = new Date(el.dataset.date);
+        const diff = eventTime - now;
+        if (diff > 0) {
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((diff / (1000 * 60)) % 60);
+          el.textContent = `Starts in: ${days}d ${hours}h ${minutes}m`;
+        } else {
+          el.textContent = "This event has started or ended.";
+        }
+      });
+    }
+
+    updateCountdowns();
+    setInterval(updateCountdowns, 60000);
+  </script>
+
+</body>
+</html>
